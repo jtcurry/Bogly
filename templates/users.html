@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block heading %}
-<h1>Heading Works</h1>
+<h1>Blogly Users</h1>
 {% endblock %}
 
 {% block content %}
 <ul>
   {% for user in users %}
-  <li><a href="/users/{{user.id}}">{{user.id}} {{user.first_name}} {{user.last_name}} {{user.image_url}}</a></li>
+  <li><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
   {% endfor %}
 </ul>
 
