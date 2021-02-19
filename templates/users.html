@@ -7,9 +7,9 @@
 {% block content %}
 <ul>
   {% for user in users %}
-  <li><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
+  <li><a id="userlist" href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
   {% endfor %}
 </ul>
 
-<a href="/users/new"><button>Add User</button></a>
+<a href="/users/new"><button id="addbtn">Add User</button></a>
 {% endblock %}

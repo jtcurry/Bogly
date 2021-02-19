@@ -7,11 +7,11 @@
 {% block content %}
 <form method="POST">
   <label for="first_name">First Name</label>
-  <input type="text" name="first_name" placeholder="First Name">
+  <input type="text" name="first_name" placeholder="First Name" required>
   <label for="last_name">Last Name</label>
-  <input type="text" name="last_name" placeholder="Last Name">
+  <input type="text" name="last_name" placeholder="Last Name" required>
   <label for="image_url">Image URL</label>
-  <input type="text" name="image_url" placeholder="Provide an image of this user">
+  <input class="urluser" type="text" name="image_url" placeholder="Provide an image of this user">
   <button type="submit">Add</button>
 </form>
 {% endblock %}

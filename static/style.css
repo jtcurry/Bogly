@@ -1,0 +1,81 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #eeeeee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-left: 2em;
+  color: black;
+}
+
+ul {
+  margin-left: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#userlist:hover {
+  color: rgb(93, 121, 172);
+}
+
+#addbtn {
+  margin-left: 4em;
+}
+
+button {
+  background-color: #eeeeee;
+  border: 2px solid rgb(93, 121, 172);
+  color: rgb(93, 121, 172);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+
+button:hover {
+  background-color: rgb(93, 121, 172);
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+img {
+  height: 200px;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+h2 {
+  margin-left: 1em;
+}
+
+#userinfo {
+  margin-left: 2em;
+}
+
+#deletebtn {
+  background-color: #eeeeee;
+  color: red;
+  border-color: red;
+}
+
+#deletebtn:hover {
+  background-color: red;
+  color: #eeeeee;
+  border-color: rgba(255, 0, 0, 0.459);
+}
+
+form {
+  margin-left: 2em;
+}
+
+form input {
+  margin-right: 1em;
+}
+
+.urluser {
+  width: 30%;
+}
