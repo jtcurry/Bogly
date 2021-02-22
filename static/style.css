@@ -5,10 +5,29 @@ body {
   background-color: #eeeeee;
   font-family: Arial, Helvetica, sans-serif;
 }
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ed9121;
+  font-family: "Permanent Marker", cursive;
+  margin-bottom: 2em;
+}
+
+#navbar h1 {
+  color: black;
+  margin-left: 1em;
+}
+
+.fa-home {
+  color: #eeeeee;
+  font-size: 1.5em;
+  margin-right: 1em;
+}
 
 h1 {
   margin-left: 2em;
-  color: black;
+  display: inline;
 }
 
 ul {
@@ -20,12 +39,13 @@ a {
   color: black;
 }
 
-#userlist:hover {
+.listhover:hover {
   color: rgb(93, 121, 172);
 }
 
 #addbtn {
-  margin-left: 4em;
+  margin-left: 4.5em;
+  display: inline;
 }
 
 button {
@@ -42,6 +62,20 @@ button:hover {
   cursor: pointer;
 }
 
+.reversebtn {
+  background-color: rgb(93, 121, 172);
+  border: 2px solid rgb(93, 121, 172);
+  color: #eeeeee;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+
+.reversebtn:hover {
+  background-color: rgb(70, 90, 126);
+  color: #eeeeee;
+  cursor: pointer;
+}
+
 img {
   height: 200px;
   margin-left: 2em;
@@ -54,28 +88,62 @@ h2 {
 
 #userinfo {
   margin-left: 2em;
+  margin-right: 2em;
 }
 
 .deletebtn {
   background-color: #eeeeee;
-  color: red;
-  border-color: red;
+  color: #ed9121;
+  border-color: #ed9121;
 }
 
 .deletebtn:hover {
-  background-color: red;
+  background-color: #ed9121;
   color: #eeeeee;
-  border-color: rgba(255, 0, 0, 0.459);
+  border-color: #ed9121;
 }
 
 form {
   margin-left: 2em;
 }
 
-form input {
+.urluser {
+  width: 30%;
+}
+
+.maincontainer {
+  display: flex;
+  margin-top: 2em;
+}
+
+.postform {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.postform label {
+  margin-top: 1em;
+}
+
+.postform button {
+  margin-top: 1em;
+  width: 25%;
+}
+
+#newuser input {
   margin-right: 1em;
 }
 
-.urluser {
-  width: 30%;
+#editform input {
+  margin-right: 1em;
+}
+
+h3 {
+  margin-left: 2em;
+  margin-top: 4em;
+}
+
+#postcontent {
+  margin-left: 2em;
+  margin-bottom: 2em;
 }

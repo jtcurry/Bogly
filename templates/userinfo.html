@@ -2,24 +2,26 @@
 
 
 {% block content %}
-<a href="/"><i class="fas fa-home"></i></a>
+
 {% for msg in get_flashed_messages() %}
 <p>{{msg}}</p>
 {% endfor %}
 
-<img src="{{user.image_url}}" alt="User Image">
 <h2>{{user.first_name}} {{user.last_name}}</h2>
+<img src="{{user.image_url}}" alt="User Image">
 
-<form id="userinfo">
-  <button formaction="/users/{{user.id}}/edit" formmethod="GET">Edit</button>
-  <button class="deletebtn" formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
-</form>
-
+<div class="maincontainer">
+  <form id="userinfo">
+    <button formaction="/users/{{user.id}}/edit" formmethod="GET">Edit</button>
+    <button class="deletebtn" formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
+  </form>
+  <a href="/users/{{user.id}}/posts/new"><button class="reversebtn">Add Post</button></a>
+</div>
+<h3>Posts</h3>
 <ul>
   {% for p in user_posts%}
-  <a href="/posts/{{p.id}}"><li>{{p.title}}</li></a>
+  <li><a class="listhover" href="/posts/{{p.id}}">{{p.title}} <i>{{p.friendly_date}}</i></li></a>
   {% endfor %}
 </ul>
 
-<a href="/users/{{user.id}}/posts/new"><button>Add Post</button></a>
 {% endblock %}
