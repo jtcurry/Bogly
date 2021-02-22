@@ -56,13 +56,13 @@ h2 {
   margin-left: 2em;
 }
 
-#deletebtn {
+.deletebtn {
   background-color: #eeeeee;
   color: red;
   border-color: red;
 }
 
-#deletebtn:hover {
+.deletebtn:hover {
   background-color: red;
   color: #eeeeee;
   border-color: rgba(255, 0, 0, 0.459);
