@@ -8,6 +8,16 @@
 <div id="postcontent">
   <p>{{post.content}}</p>
   <i>By {{user.first_name}} {{user.last_name}}</i>
+
+  {%if post.tags %}
+  <p>
+    <b>Tags:</b>
+    {% for tag in post.tags %}
+    <a id="tagitem" href="/tags/{{tag.id}}"><i>{{tag.name}}</i></a>
+    {% endfor %}
+  </p>
+  {% endif %}
+
 </div>
 
 <form id="postinfo">

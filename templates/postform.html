@@ -8,6 +8,13 @@
   <input type="text" name="title">
   <label for="content">Content</label>
   <textarea name="content" class="content" cols="30" rows="8"></textarea>
+  <div class="checkboxes">
+    {% for tag in tags %}
+    <input type="checkbox" value="{{tag.id}}" name="tags" id="tag_{{tag.id}}">
+    <label for="tag_{{tag.id}}">{{tag.name}}</label>
+    <br>
+    {% endfor %}
+  </div>
   <button type="submit">Add</button>
   <button formaction="/users" formmethod="GET">Cancel</button>
 </form>

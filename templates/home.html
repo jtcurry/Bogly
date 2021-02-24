@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+<h1>Recent Posts</h1>
+{% endblock %}
+
+{% block content %}
+<div class="recentposts">
+  {% for post in posts %}
+  <a href="/posts/{{post.id}}">
+    <h3>{{post.title}}</h3>
+  </a>
+  <p>{{post.content}}</p>
+  <i>By {{post.user.first_name}} {{post.user.last_name}}</i>
+  {% endfor %}
+</div>
+{% endblock %}
