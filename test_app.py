@@ -1,6 +1,6 @@
 from app import app
 from unittest import TestCase
-from models import db, User
+from models import db, User, Post
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly_test'
 app.config['SQLALCHEMY_ECHO'] = False
@@ -45,7 +45,7 @@ class Usertests(TestCase):
             resp = client.post("/users/new", data=d, follow_redirects=True)
             html = resp.get_data(as_text=True)
             self.assertEqual(resp.status_code, 200)
-            self.assertIn('<li><a href="/users/2">Allen Apple</a></li>', html)
+            self.assertIn('<li><a class="listhover" href="/users/2">Allen Apple</a></li>', html)
 
     def test_remove_user(self):
         """Test if user can be deleted"""
@@ -57,3 +57,34 @@ class Usertests(TestCase):
             html = resp.get_data(as_text=True)
             self.assertNotIn(
                 '<li><a href="/users/4">Billy Banana</a></li>', html)
+
+
+class Posttests(TestCase):
+
+    def setUp(self):
+        User.query.delete()
+        user = User(first_name="TestFirst", last_name="TestLast")
+        db.session.add(user)
+        db.session.commit()
+        self.user_id = user.id
+
+        Post.query.delete()
+        post = Post(title="Title", content="This is the content", user_id="1")
+        db.session.add(post)
+        db.session.commit()
+        self.post_id = post.id
+
+
+    def teardown(self):
+        db.session.rollback()
+
+
+    def test_add_post(self):
+        """Test if new post can be added"""
+        with app.test_client() as client:
+            d= {"title": "Title2", "content": "This is the content"}
+            resp = client.post("/users/1/posts/new", data=d, follow_redirects=True)
+            html = resp.get_data(as_text=True)
+            self.assertEqual(resp.status_code, 200)
+
+
